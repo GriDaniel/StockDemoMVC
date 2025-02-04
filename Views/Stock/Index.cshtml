@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Stock>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container py-5">
+        <h1 class="display-4">Stocks List</h1>
+        @if (Model != null && Model.Any())
+        {
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Available Stocks</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Stock Name</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var stock in Model)
+                            {
+                                <tr>
+                                    <td>@stock.Name</td>
+                                    <td>@stock.Price</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-warning mt-4">No stocks available.</div>
+        }
+    </div>
+
+</body>
+</html>

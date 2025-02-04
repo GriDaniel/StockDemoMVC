@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid text-center py-5">
+                <h1 class="display-5 fw-bold">Stock Dashboard</h1>
+                <p class="mx-auto col-md-8 fs-4 display-5">You can buy, sell or view stocks below.</p>
+                <!-- Trigger Index action in controller -->
+                <a asp-controller="Stock" asp-action="Index" class="btn btn-primary btn-lg" role="button">
+                    View My Stocks
+                </a>
+            </div>
+        </div>
+        <!-- Trigger Create action in controller -->
+        <form method="post" asp-action="Create" asp-controller="Stock">
+            <div class="form-group">
+                <label for="name">Stock Name</label>
+                <input type="text" class="form-control" id="name" name="Name" required />
+            </div>
+
+            <div class="form-group">
+                <label for="price">Stock Price</label>
+                <input type="text" class="form-control" id="price" name="Price" required />
+            </div>
+
+            <button type="submit" class="mt-2 btn btn-primary">Add Stock</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -30,7 +30,7 @@ namespace StockDemo.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] Stock stock)
+        public IActionResult Create(Stock stock)
         {
             if (stock == null)
             {
@@ -38,7 +38,7 @@ namespace StockDemo.Controllers
             }
 
             _myService.Create(stock);
-            return RedirectToAction(nameof(Index));
+            return Redirect("/");
         }
 
         [HttpPost]
