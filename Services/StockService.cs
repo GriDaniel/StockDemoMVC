@@ -40,11 +40,13 @@ namespace StockDemo.Services
         }
 
 
-        public void Update(string _id, Stock stock)
+        public void Update(string name, Stock stock)
         {
-            var filter = Builders<Stock>.Filter.Eq(q => _id, _id);
+            var filter = Builders<Stock>.Filter.Eq(q => q.Name, name);
             var update = Builders<Stock>.Update.Set("Name", stock.Name).Set("Price", stock.Price);
             stockCollection.UpdateOne(filter, update);
         }
     }
 }
+
+

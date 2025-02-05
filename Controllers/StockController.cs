@@ -42,7 +42,7 @@ namespace StockDemo.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update(string id, [FromBody] Stock stock)
+        public IActionResult Update(string id, Stock stock)
         {
             if (stock == null)
             {

@@ -7,7 +7,7 @@ namespace StockDemo.Models
     {
         [BsonId]
         public required ObjectId _id {  get; set; }
-        public required string  Name { get; set; }
+        public required string Name { get; set; }
         public required string Price { get; set; }
     }
 }

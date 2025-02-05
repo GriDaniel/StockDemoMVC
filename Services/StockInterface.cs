@@ -11,7 +11,7 @@ namespace StockDemo.Services
         Stock GetStock(string name);
         
         void Create(Stock stock);
-        void Update(string _id, Stock stock);
+        void Update(string name, Stock stock);
         void Delete(string name);
 
     }
