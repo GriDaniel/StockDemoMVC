@@ -11,7 +11,12 @@
 </head>
 <body>
     <main>
-        @await Component.InvokeAsync("HeroBoard")
+        <div class="mt-2"
+            @await Component.InvokeAsync("HeroBoard")
+        </div>
+        <div class="mt-20">
+            @await Component.InvokeAsync("Navbar")
+        </div>
         @RenderBody()  
     </main>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
